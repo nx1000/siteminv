@@ -1,0 +1,905 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP-ENV:Header />
+  <SOAP-ENV:Body>
+    <OTA_ResRetrieveRS xmlns="http://www.opentravel.org/OTA/2003/05" EchoToken="echo-abc123" TimeStamp="2016-06-27T00:37:51+00:00" Version="1.0">
+      <Success />
+      <ReservationsList>
+        <HotelReservation CreateDateTime="2016-06-27T00:28:26+00:00" ResStatus="Book">
+          <POS>
+            <Source>
+              <RequestorID ID="SITEMINDER" Type="22" />
+              <BookingChannel Primary="true" Type="7">
+                <CompanyName Code="BBN">-TheBookingButton</CompanyName>
+              </BookingChannel>
+            </Source>
+          </POS>
+          <UniqueID ID="BBN-61986" Type="14" />
+          <UniqueID ID="46356" ID_Context="MESSAGE_UNIQUE_ID" Type="16" />
+          <RoomStays>
+            <RoomStay>
+              <RoomTypes>
+                <RoomType Configuration="King Bed" NonSmoking="false" RoomType="Double Room" RoomTypeCode="DR">
+                  <RoomDescription>
+                    <Text>Double Room w/King Bed</Text>
+                  </RoomDescription>
+                </RoomType>
+              </RoomTypes>
+              <RatePlans>
+                <RatePlan EffectiveDate="2016-06-30" ExpireDate="2016-07-02" RatePlanCode="BB" RatePlanName="Double Room - Bed &amp; Breakfast">
+                  <RatePlanDescription>
+                    <Text>Double Room with Breakfast Included.</Text>
+                  </RatePlanDescription>
+                </RatePlan>
+              </RatePlans>
+              <RoomRates>
+                <RoomRate NumberOfUnits="1" RatePlanCode="BB" RoomTypeCode="DR">
+                  <Rates>
+                    <Rate EffectiveDate="2016-06-30" ExpireDate="2016-07-02" RateTimeUnit="Day" UnitMultiplier="2">
+                      <Total AmountAfterTax="50.00" CurrencyCode="GBP" />
+                    </Rate>
+                  </Rates>
+                </RoomRate>
+              </RoomRates>
+              <GuestCounts>
+                <GuestCount AgeQualifyingCode="10" Count="2" />
+              </GuestCounts>
+              <TimeSpan End="2016-07-02" Start="2016-06-30" />
+              <Total AmountAfterTax="100.00" CurrencyCode="GBP" />
+              <BasicPropertyInfo HotelCode="Emerald498" />
+              <Comments>
+                <Comment>
+                  <Text>Room facing West preferred.</Text>
+                </Comment>
+              </Comments>
+            </RoomStay>
+          </RoomStays>
+          <ResGuests>
+            <ResGuest PrimaryIndicator="true" ResGuestRPH="1">
+              <Profiles>
+                <ProfileInfo>
+                  <Profile ProfileType="1">
+                    <Customer>
+                      <PersonName>
+                        <GivenName>Grant</GivenName>
+                        <Surname>Smith,</Surname>
+                      </PersonName>
+                      <Telephone PhoneNumber="0411111111" />
+                      <Telephone PhoneNumber="0411111111" PhoneTechType="5" />
+                      <Email>grant.smith@testing.com</Email>
+                      <Address>
+                        <AddressLine>23 Koala Place</AddressLine>
+                        <CityName>Testville</CityName>
+                        <PostalCode>2000</PostalCode>
+                        <StateProv>New South Wales</StateProv>
+                        <CountryName>Australia</CountryName>
+                      </Address>
+                    </Customer>
+                  </Profile>
+                </ProfileInfo>
+              </Profiles>
+            </ResGuest>
+          </ResGuests>
+          <ResGlobalInfo>
+            <Memberships>
+              <Membership AccountID="156216513518" ProgramCode="RipperRewards" />
+            </Memberships>
+            <Guarantee>
+              <GuaranteesAccepted>
+                <GuaranteeAccepted>
+                  <PaymentCard CardCode="VI" CardType="1" ExpireDate="1220">
+                    <CardHolderName>Grant Smith</CardHolderName>
+                  </PaymentCard>
+                </GuaranteeAccepted>
+              </GuaranteesAccepted>
+            </Guarantee>
+            <DepositPayments>
+              <GuaranteePayment>
+                <AmountPercent Percent="50.00" />
+                <Description>
+                  <Text>Upfront Security Payment</Text>
+                </Description>
+              </GuaranteePayment>
+            </DepositPayments>
+            <Fees>
+              <Fee Amount="10.00" Code="27" TaxInclusive="true" Type="Inclusive">
+                <Description Name="Commission">
+                  <Text>Description: Reservation Commission, Percentage: 10.00</Text>
+                </Description>
+              </Fee>
+            </Fees>
+            <Total AmountAfterTax="100.00" CurrencyCode="GBP" />
+            <HotelReservationIDs>
+              <HotelReservationID ResID_Type="14" ResID_Value="61986" />
+            </HotelReservationIDs>
+            <Profiles>
+              <ProfileInfo>
+                <Profile ProfileType="1">
+                  <Customer>
+                    <PersonName>
+                      <GivenName>Grant</GivenName>
+                      <Surname>Smith</Surname>
+                    </PersonName>
+                    <Telephone PhoneNumber="0411111111" />
+                    <Telephone PhoneNumber="0411111111" PhoneTechType="5" />
+                    <Email>grant.smith@testing.com</Email>
+                    <Address />
+                    <CustLoyalty ExpiryDate="2018-11-30" MembershipID="156216513518" ProgramID="RipperRewards" />
+                  </Customer>
+                </Profile>
+              </ProfileInfo>
+            </Profiles>
+          </ResGlobalInfo>
+        </HotelReservation>
+        <HotelReservation CreateDateTime="2016-06-27T00:28:57+00:00" ResStatus="Book">
+          <POS>
+            <Source>
+              <RequestorID ID="SITEMINDER" Type="22" />
+              <BookingChannel Primary="true" Type="7">
+                <CompanyName Code="IHW">iHotelier PMSConnect</CompanyName>
+              </BookingChannel>
+            </Source>
+          </POS>
+          <UniqueID ID="IHW-73118" Type="14" />
+          <UniqueID ID="46357" ID_Context="MESSAGE_UNIQUE_ID" Type="16" />
+          <RoomStays>
+            <RoomStay>
+              <RoomTypes>
+                <RoomType RoomTypeCode="DR" />
+              </RoomTypes>
+              <RatePlans>
+                <RatePlan EffectiveDate="2016-06-28" ExpireDate="2016-06-29" RatePlanCode="BB" />
+              </RatePlans>
+              <RoomRates>
+                <RoomRate NumberOfUnits="1" RatePlanCode="BB" RoomTypeCode="DR">
+                  <Rates>
+                    <Rate EffectiveDate="2016-06-28" ExpireDate="2016-06-29" RateTimeUnit="Day" UnitMultiplier="1">
+                      <Total AmountAfterTax="330.00" AmountBeforeTax="300.00" CurrencyCode="AUD">
+                        <Taxes Amount="30.00" />
+                      </Total>
+                    </Rate>
+                  </Rates>
+                </RoomRate>
+              </RoomRates>
+              <GuestCounts>
+                <GuestCount AgeQualifyingCode="10" Count="2" />
+                <GuestCount AgeQualifyingCode="8" Count="1" />
+              </GuestCounts>
+              <TimeSpan End="2016-06-29" Start="2016-06-28" />
+              <Total AmountAfterTax="330.00" AmountBeforeTax="300.00" CurrencyCode="AUD">
+                <Taxes Amount="30.00" />
+              </Total>
+              <BasicPropertyInfo HotelCode="Emerald498" />
+            </RoomStay>
+          </RoomStays>
+          <ResGuests>
+            <ResGuest PrimaryIndicator="true" ResGuestRPH="1">
+              <Profiles>
+                <ProfileInfo>
+                  <Profile ProfileType="1">
+                    <Customer>
+                      <PersonName>
+                        <GivenName>John</GivenName>
+                        <Surname>Smith</Surname>
+                      </PersonName>
+                      <Address />
+                    </Customer>
+                  </Profile>
+                </ProfileInfo>
+              </Profiles>
+            </ResGuest>
+          </ResGuests>
+          <ResGlobalInfo>
+            <Guarantee>
+              <GuaranteesAccepted>
+                <GuaranteeAccepted>
+                  <PaymentCard CardCode="MC" CardNumber="4444333322221111" CardType="1" ExpireDate="1220">
+                    <CardHolderName>Agoda Company Pte Ltd</CardHolderName>
+                  </PaymentCard>
+                </GuaranteeAccepted>
+              </GuaranteesAccepted>
+            </Guarantee>
+            <Total AmountAfterTax="330.00" AmountBeforeTax="300.00" CurrencyCode="AUD">
+              <Taxes Amount="30.00" />
+            </Total>
+            <HotelReservationIDs>
+              <HotelReservationID ResID_Type="14" ResID_Value="73118" />
+            </HotelReservationIDs>
+            <Profiles>
+              <ProfileInfo>
+                <UniqueID ID="1" ID_Context="CHANNEL" Type="16" />
+                <UniqueID ID="4185" ID_Context="IATA" Type="16" />
+                <Profile ProfileType="4">
+                  <Customer>
+                    <Address>
+                      <CompanyName>Company Name here</CompanyName>
+                    </Address>
+                  </Customer>
+                </Profile>
+              </ProfileInfo>
+            </Profiles>
+            <Comments>
+              <Comment>
+                <Text>Special Request: Separate 2 bed pls, 2 extra bed(s) requested, Breakfast included</Text>
+              </Comment>
+            </Comments>
+          </ResGlobalInfo>
+        </HotelReservation>
+        <HotelReservation CreateDateTime="2016-06-27T00:29:04+00:00" ResStatus="Book">
+          <POS>
+            <Source>
+              <RequestorID ID="SITEMINDER" Type="22" />
+              <BookingChannel Primary="true" Type="7">
+                <CompanyName Code="BDC">Booking.com</CompanyName>
+              </BookingChannel>
+            </Source>
+          </POS>
+          <UniqueID ID="BDC-19406" Type="14" />
+          <UniqueID ID="46358" ID_Context="MESSAGE_UNIQUE_ID" Type="16" />
+          <RoomStays>
+            <RoomStay>
+              <RoomTypes>
+                <RoomType RoomType="Double Room" RoomTypeCode="DR">
+                  <RoomDescription>
+                    <Text>This air-conditioned room features a fully equipped kitchen</Text>
+                  </RoomDescription>
+                </RoomType>
+              </RoomTypes>
+              <RatePlans>
+                <RatePlan EffectiveDate="2016-06-30" ExpireDate="2016-07-03" RatePlanCode="BB" />
+              </RatePlans>
+              <RoomRates>
+                <RoomRate NumberOfUnits="1" RatePlanCode="BB" RoomTypeCode="DR">
+                  <Rates>
+                    <Rate EffectiveDate="2016-06-30" ExpireDate="2016-07-03" RateTimeUnit="Day" UnitMultiplier="3">
+                      <Total AmountBeforeTax="118.33" CurrencyCode="AUD" />
+                    </Rate>
+                  </Rates>
+                </RoomRate>
+              </RoomRates>
+              <GuestCounts>
+                <GuestCount AgeQualifyingCode="10" Count="2" />
+              </GuestCounts>
+              <TimeSpan End="2016-07-03" Start="2016-06-30" />
+              <Total AmountAfterTax="355.00" CurrencyCode="AUD" />
+              <BasicPropertyInfo HotelCode="Emerald498" />
+              <ResGuestRPHs>
+                <ResGuestRPH RPH="1" />
+              </ResGuestRPHs>
+              <Comments>
+                <Comment>
+                  <Text>smoking preference Non-Smoking</Text>
+                </Comment>
+              </Comments>
+            </RoomStay>
+            <RoomStay>
+              <RoomTypes>
+                <RoomType RoomType="Double Room" RoomTypeCode="DR">
+                  <RoomDescription>
+                    <Text>This air-conditioned room features a small kitchenette</Text>
+                  </RoomDescription>
+                </RoomType>
+              </RoomTypes>
+              <RatePlans>
+                <RatePlan EffectiveDate="2016-07-04" ExpireDate="2016-07-06" RatePlanCode="BB" />
+              </RatePlans>
+              <RoomRates>
+                <RoomRate NumberOfUnits="1" RatePlanCode="BB" RoomTypeCode="DR">
+                  <Rates>
+                    <Rate EffectiveDate="2016-07-04" ExpireDate="2016-07-06" RateTimeUnit="Day" UnitMultiplier="2">
+                      <Total AmountBeforeTax="135.00" CurrencyCode="AUD" />
+                    </Rate>
+                  </Rates>
+                </RoomRate>
+              </RoomRates>
+              <GuestCounts>
+                <GuestCount AgeQualifyingCode="10" Count="1" />
+              </GuestCounts>
+              <TimeSpan End="2016-07-06" Start="2016-07-04" />
+              <Total AmountAfterTax="270.00" CurrencyCode="AUD" />
+              <BasicPropertyInfo HotelCode="Emerald498" />
+              <ResGuestRPHs>
+                <ResGuestRPH RPH="2" />
+              </ResGuestRPHs>
+              <Comments>
+                <Comment>
+                  <Text>smoking preference Non-Smoking</Text>
+                </Comment>
+              </Comments>
+            </RoomStay>
+          </RoomStays>
+          <ResGuests>
+            <ResGuest PrimaryIndicator="true" ResGuestRPH="1">
+              <Profiles>
+                <ProfileInfo>
+                  <Profile ProfileType="1">
+                    <Customer>
+                      <PersonName>
+                        <GivenName>James</GivenName>
+                        <Surname>McDonald</Surname>
+                      </PersonName>
+                      <Telephone PhoneNumber="1111111111" />
+                      <Address>
+                        <AddressLine>88 Cumberland St</AddressLine>
+                        <CityName>Sydney</CityName>
+                        <PostalCode>2000</PostalCode>
+                        <CountryName>AU</CountryName>
+                      </Address>
+                    </Customer>
+                  </Profile>
+                </ProfileInfo>
+              </Profiles>
+            </ResGuest>
+            <ResGuest ResGuestRPH="2">
+              <Profiles>
+                <ProfileInfo>
+                  <Profile ProfileType="1">
+                    <Customer>
+                      <PersonName>
+                        <GivenName>Fiona</GivenName>
+                        <Surname>Brown</Surname>
+                      </PersonName>
+                      <Telephone PhoneNumber="1111111111" />
+                      <Address>
+                        <AddressLine>88 Cumberland St</AddressLine>
+                        <CityName>Sydney</CityName>
+                        <PostalCode>2000</PostalCode>
+                        <CountryName>AU</CountryName>
+                      </Address>
+                    </Customer>
+                  </Profile>
+                </ProfileInfo>
+              </Profiles>
+            </ResGuest>
+          </ResGuests>
+          <ResGlobalInfo>
+            <Guarantee>
+              <GuaranteesAccepted>
+                <GuaranteeAccepted>
+                  <PaymentCard CardCode="VI" CardNumber="8888" CardType="1" ExpireDate="0820">
+                    <CardHolderName>J McDonald</CardHolderName>
+                  </PaymentCard>
+                </GuaranteeAccepted>
+              </GuaranteesAccepted>
+            </Guarantee>
+            <Fees>
+              <Fee Amount="93.75" Code="27" TaxInclusive="true" Type="Inclusive">
+                <Description Name="Commission">
+                  <Text />
+                </Description>
+              </Fee>
+            </Fees>
+            <Total AmountAfterTax="625.00" CurrencyCode="AUD" />
+            <HotelReservationIDs>
+              <HotelReservationID ResID_Type="14" ResID_Value="19406" />
+            </HotelReservationIDs>
+            <Profiles>
+              <ProfileInfo>
+                <Profile ProfileType="1">
+                  <Customer>
+                    <PersonName>
+                      <GivenName>James</GivenName>
+                      <Surname>McDonald</Surname>
+                    </PersonName>
+                    <Telephone PhoneNumber="1111111111" />
+                    <Address>
+                      <AddressLine>88 Cumberland St</AddressLine>
+                      <CityName>Sydney</CityName>
+                      <PostalCode>2000</PostalCode>
+                      <CountryName>AU</CountryName>
+                    </Address>
+                  </Customer>
+                </Profile>
+              </ProfileInfo>
+            </Profiles>
+          </ResGlobalInfo>
+        </HotelReservation>
+        <HotelReservation CreateDateTime="2016-06-27T00:29:29+00:00" ResStatus="Book">
+          <POS>
+            <Source>
+              <RequestorID ID="SITEMINDER" Type="22" />
+              <BookingChannel Primary="true" Type="7">
+                <CompanyName Code="AGO">Agoda</CompanyName>
+              </BookingChannel>
+            </Source>
+          </POS>
+          <UniqueID ID="AGO-87917" Type="14" />
+          <UniqueID ID="46359" ID_Context="MESSAGE_UNIQUE_ID" Type="16" />
+          <RoomStays>
+            <RoomStay>
+              <RoomTypes>
+                <RoomType RoomTypeCode="DR" />
+              </RoomTypes>
+              <RatePlans>
+                <RatePlan EffectiveDate="2016-06-29" ExpireDate="2016-07-01" RatePlanCode="BB" />
+              </RatePlans>
+              <RoomRates>
+                <RoomRate NumberOfUnits="1" RatePlanCode="BB" RoomTypeCode="DR">
+                  <Rates>
+                    <Rate EffectiveDate="2016-06-29" ExpireDate="2016-07-01" RateTimeUnit="Day" UnitMultiplier="2">
+                      <Base AmountAfterTax="16.83" AmountBeforeTax="14.64" CurrencyCode="USD">
+                        <Taxes Amount="2.20" />
+                      </Base>
+                      <Total AmountAfterTax="16.83" AmountBeforeTax="14.64" CurrencyCode="USD">
+                        <Taxes Amount="2.20" />
+                      </Total>
+                    </Rate>
+                  </Rates>
+                </RoomRate>
+              </RoomRates>
+              <GuestCounts>
+                <GuestCount AgeQualifyingCode="10" Count="2" />
+              </GuestCounts>
+              <TimeSpan End="2016-07-01" Start="2016-06-29" />
+              <Total AmountAfterTax="33.66" AmountBeforeTax="29.27" CurrencyCode="USD">
+                <Taxes Amount="4.39" />
+              </Total>
+              <BasicPropertyInfo HotelCode="Emerald498" />
+            </RoomStay>
+          </RoomStays>
+          <ResGuests>
+            <ResGuest PrimaryIndicator="true" ResGuestRPH="1">
+              <Profiles>
+                <ProfileInfo>
+                  <Profile ProfileType="1">
+                    <Customer>
+                      <PersonName>
+                        <GivenName>Frank</GivenName>
+                        <Surname>Lampard</Surname>
+                      </PersonName>
+                      <Address />
+                    </Customer>
+                  </Profile>
+                </ProfileInfo>
+              </Profiles>
+            </ResGuest>
+          </ResGuests>
+          <ResGlobalInfo>
+            <Total AmountAfterTax="33.66" AmountBeforeTax="29.27" CurrencyCode="USD">
+              <Taxes Amount="4.39" />
+            </Total>
+            <HotelReservationIDs>
+              <HotelReservationID ResID_Type="14" ResID_Value="87917" />
+            </HotelReservationIDs>
+            <Profiles>
+              <ProfileInfo>
+                <Profile ProfileType="1">
+                  <Customer>
+                    <PersonName>
+                      <GivenName>Frank</GivenName>
+                      <Surname>Lampard</Surname>
+                    </PersonName>
+                    <Address />
+                  </Customer>
+                </Profile>
+              </ProfileInfo>
+            </Profiles>
+            <Comments>
+              <Comment>
+                <Text>Breakfast included</Text>
+              </Comment>
+            </Comments>
+          </ResGlobalInfo>
+        </HotelReservation>
+        <HotelReservation CreateDateTime="2016-06-27T00:29:36+00:00" ResStatus="Book">
+          <POS>
+            <Source>
+              <RequestorID ID="SITEMINDER" Type="22" />
+              <BookingChannel Primary="true" Type="7">
+                <CompanyName Code="EXP">Expedia</CompanyName>
+              </BookingChannel>
+            </Source>
+          </POS>
+          <UniqueID ID="EXP-56228" Type="14" />
+          <UniqueID ID="46360" ID_Context="MESSAGE_UNIQUE_ID" Type="16" />
+          <RoomStays>
+            <RoomStay>
+              <RoomTypes>
+                <RoomType RoomTypeCode="DR" />
+              </RoomTypes>
+              <RatePlans>
+                <RatePlan EffectiveDate="2016-06-30" ExpireDate="2016-07-04" RatePlanCode="BB" />
+              </RatePlans>
+              <RoomRates>
+                <RoomRate NumberOfUnits="1" RatePlanCode="BB" RoomTypeCode="DR">
+                  <Rates>
+                    <Rate EffectiveDate="2016-06-30" ExpireDate="2016-07-01" RateTimeUnit="Day" UnitMultiplier="1">
+                      <Base AmountAfterTax="118.80" AmountBeforeTax="105.75" CurrencyCode="USD">
+                        <Taxes Amount="13.05" />
+                      </Base>
+                      <Total AmountAfterTax="118.80" AmountBeforeTax="105.75" CurrencyCode="USD">
+                        <Taxes Amount="13.05" />
+                      </Total>
+                    </Rate>
+                    <Rate EffectiveDate="2016-07-01" ExpireDate="2016-07-02" RateTimeUnit="Day" UnitMultiplier="1">
+                      <Base AmountAfterTax="108.69" AmountBeforeTax="96.75" CurrencyCode="USD">
+                        <Taxes Amount="11.94" />
+                      </Base>
+                      <Total AmountAfterTax="108.69" AmountBeforeTax="96.75" CurrencyCode="USD">
+                        <Taxes Amount="11.94" />
+                      </Total>
+                    </Rate>
+                    <Rate EffectiveDate="2016-07-02" ExpireDate="2016-07-03" RateTimeUnit="Day" UnitMultiplier="1">
+                      <Base AmountAfterTax="112.06" AmountBeforeTax="99.75" CurrencyCode="USD">
+                        <Taxes Amount="12.31" />
+                      </Base>
+                      <Total AmountAfterTax="112.06" AmountBeforeTax="99.75" CurrencyCode="USD">
+                        <Taxes Amount="12.31" />
+                      </Total>
+                    </Rate>
+                    <Rate EffectiveDate="2016-07-03" ExpireDate="2016-07-04" RateTimeUnit="Day" UnitMultiplier="1">
+                      <Base AmountAfterTax="125.54" AmountBeforeTax="111.75" CurrencyCode="USD">
+                        <Taxes Amount="13.79" />
+                      </Base>
+                      <Total AmountAfterTax="125.54" AmountBeforeTax="111.75" CurrencyCode="USD">
+                        <Taxes Amount="13.79" />
+                      </Total>
+                    </Rate>
+                  </Rates>
+                </RoomRate>
+              </RoomRates>
+              <GuestCounts>
+                <GuestCount AgeQualifyingCode="10" Count="2" />
+              </GuestCounts>
+              <TimeSpan End="2016-07-04" Start="2016-06-30" />
+              <Total AmountAfterTax="465.08" AmountBeforeTax="414.00" CurrencyCode="USD">
+                <Taxes Amount="51.08" />
+              </Total>
+              <BasicPropertyInfo HotelCode="Emerald498" />
+              <ResGuestRPHs>
+                <ResGuestRPH RPH="1" />
+              </ResGuestRPHs>
+              <Comments>
+                <Comment>
+                  <Text>Expedia Collect Booking, Non-Smoking, One King Bed</Text>
+                </Comment>
+              </Comments>
+            </RoomStay>
+          </RoomStays>
+          <ResGuests>
+            <ResGuest PrimaryIndicator="true" ResGuestRPH="1">
+              <Profiles>
+                <ProfileInfo>
+                  <Profile ProfileType="1">
+                    <Customer>
+                      <PersonName>
+                        <GivenName>Juan</GivenName>
+                        <Surname>Mata</Surname>
+                      </PersonName>
+                      <Telephone PhoneNumber="0 0 11111111" />
+                      <Address />
+                    </Customer>
+                  </Profile>
+                </ProfileInfo>
+              </Profiles>
+            </ResGuest>
+          </ResGuests>
+          <ResGlobalInfo>
+            <Total AmountAfterTax="465.08" AmountBeforeTax="414.00" CurrencyCode="USD">
+              <Taxes Amount="51.08" />
+            </Total>
+            <HotelReservationIDs>
+              <HotelReservationID ResID_Type="14" ResID_Value="56228" />
+            </HotelReservationIDs>
+          </ResGlobalInfo>
+        </HotelReservation>
+        <HotelReservation CreateDateTime="2016-06-27T00:29:43+00:00" ResStatus="Book">
+          <POS>
+            <Source>
+              <RequestorID ID="SITEMINDER" Type="22" />
+              <BookingChannel Primary="true" Type="7">
+                <CompanyName Code="AGO">Agoda</CompanyName>
+              </BookingChannel>
+            </Source>
+          </POS>
+          <UniqueID ID="AGO-92098" Type="14" />
+          <UniqueID ID="46361" ID_Context="MESSAGE_UNIQUE_ID" Type="16" />
+          <RoomStays>
+            <RoomStay>
+              <RoomTypes>
+                <RoomType RoomTypeCode="DR" />
+              </RoomTypes>
+              <RatePlans>
+                <RatePlan EffectiveDate="2016-06-30" ExpireDate="2016-07-02" RatePlanCode="BB" />
+              </RatePlans>
+              <RoomRates>
+                <RoomRate NumberOfUnits="1" RatePlanCode="BB" RoomTypeCode="DR">
+                  <Rates>
+                    <Rate EffectiveDate="2016-06-30" ExpireDate="2016-07-01" RateTimeUnit="Day" UnitMultiplier="1">
+                      <Base AmountAfterTax="33.66" AmountBeforeTax="29.27" CurrencyCode="USD">
+                        <Taxes Amount="4.39" />
+                      </Base>
+                      <Total AmountAfterTax="33.66" AmountBeforeTax="29.27" CurrencyCode="USD">
+                        <Taxes Amount="4.39" />
+                      </Total>
+                    </Rate>
+                    <Rate EffectiveDate="2016-07-01" ExpireDate="2016-07-02" RateTimeUnit="Day" UnitMultiplier="1">
+                      <Base AmountAfterTax="33.66" AmountBeforeTax="29.27" CurrencyCode="USD">
+                        <Taxes Amount="4.39" />
+                      </Base>
+                      <Total AmountAfterTax="33.66" AmountBeforeTax="29.27" CurrencyCode="USD">
+                        <Taxes Amount="4.39" />
+                      </Total>
+                    </Rate>
+                  </Rates>
+                </RoomRate>
+              </RoomRates>
+              <GuestCounts>
+                <GuestCount AgeQualifyingCode="10" Count="4" />
+              </GuestCounts>
+              <TimeSpan End="2016-07-02" Start="2016-06-30" />
+              <Total AmountAfterTax="67.32" AmountBeforeTax="58.54" CurrencyCode="USD">
+                <Taxes Amount="8.78" />
+              </Total>
+              <BasicPropertyInfo HotelCode="Emerald498" />
+            </RoomStay>
+          </RoomStays>
+          <ResGuests>
+            <ResGuest PrimaryIndicator="true" ResGuestRPH="1">
+              <Profiles>
+                <ProfileInfo>
+                  <Profile ProfileType="1">
+                    <Customer>
+                      <PersonName>
+                        <GivenName>Frank</GivenName>
+                        <Surname>Test</Surname>
+                      </PersonName>
+                      <Address />
+                    </Customer>
+                  </Profile>
+                </ProfileInfo>
+              </Profiles>
+            </ResGuest>
+          </ResGuests>
+          <ResGlobalInfo>
+            <Guarantee>
+              <GuaranteesAccepted>
+                <GuaranteeAccepted>
+                  <PaymentCard CardCode="VI" CardType="1" ExpireDate="1216">
+                    <CardHolderName>Frank Test</CardHolderName>
+                  </PaymentCard>
+                </GuaranteeAccepted>
+              </GuaranteesAccepted>
+            </Guarantee>
+            <Total AmountAfterTax="67.32" AmountBeforeTax="58.54" CurrencyCode="USD">
+              <Taxes Amount="8.78" />
+            </Total>
+            <HotelReservationIDs>
+              <HotelReservationID ResID_Type="14" ResID_Value="92098" />
+            </HotelReservationIDs>
+            <Profiles>
+              <ProfileInfo>
+                <Profile ProfileType="1">
+                  <Customer>
+                    <PersonName>
+                      <GivenName>Frank</GivenName>
+                      <Surname>Test</Surname>
+                    </PersonName>
+                    <Address />
+                  </Customer>
+                </Profile>
+              </ProfileInfo>
+            </Profiles>
+            <Comments>
+              <Comment>
+                <Text>Non smoking</Text>
+              </Comment>
+            </Comments>
+          </ResGlobalInfo>
+        </HotelReservation>
+        <HotelReservation CreateDateTime="2016-06-27T00:29:45+00:00" ResStatus="Book">
+          <POS>
+            <Source>
+              <RequestorID ID="SITEMINDER" Type="22" />
+              <BookingChannel Primary="true" Type="7">
+                <CompanyName Code="BDC">Booking.com</CompanyName>
+              </BookingChannel>
+            </Source>
+          </POS>
+          <UniqueID ID="BDC-37210" Type="14" />
+          <UniqueID ID="46362" ID_Context="MESSAGE_UNIQUE_ID" Type="16" />
+          <RoomStays>
+            <RoomStay>
+              <RoomTypes>
+                <RoomType RoomType="Double Room" RoomTypeCode="DR">
+                  <RoomDescription>
+                    <Text>This air-conditioned room features a fully equipped kitchen</Text>
+                  </RoomDescription>
+                </RoomType>
+              </RoomTypes>
+              <RatePlans>
+                <RatePlan EffectiveDate="2016-06-30" ExpireDate="2016-07-02" RatePlanCode="BB" />
+              </RatePlans>
+              <RoomRates>
+                <RoomRate NumberOfUnits="1" RatePlanCode="BB" RoomTypeCode="DR">
+                  <Rates>
+                    <Rate EffectiveDate="2016-06-30" ExpireDate="2016-07-01" RateTimeUnit="Day" UnitMultiplier="1">
+                      <Total AmountAfterTax="125.00" CurrencyCode="AUD" />
+                    </Rate>
+                    <Rate EffectiveDate="2016-07-01" ExpireDate="2016-07-02" RateTimeUnit="Day" UnitMultiplier="1">
+                      <Total AmountAfterTax="115.00" CurrencyCode="AUD" />
+                    </Rate>
+                  </Rates>
+                </RoomRate>
+              </RoomRates>
+              <GuestCounts>
+                <GuestCount AgeQualifyingCode="10" Count="4" />
+              </GuestCounts>
+              <TimeSpan End="2016-07-02" Start="2016-06-30" />
+              <Total AmountAfterTax="355.00" CurrencyCode="AUD" />
+              <BasicPropertyInfo HotelCode="Emerald498" />
+              <ResGuestRPHs>
+                <ResGuestRPH RPH="1" />
+              </ResGuestRPHs>
+              <Comments>
+                <Comment>
+                  <Text>smoking preference Non-Smoking</Text>
+                </Comment>
+              </Comments>
+            </RoomStay>
+          </RoomStays>
+          <ResGuests>
+            <ResGuest PrimaryIndicator="true" ResGuestRPH="1">
+              <Profiles>
+                <ProfileInfo>
+                  <Profile ProfileType="1">
+                    <Customer>
+                      <PersonName>
+                        <GivenName>James</GivenName>
+                        <Surname>Test</Surname>
+                      </PersonName>
+                      <Telephone PhoneNumber="1111111111" />
+                      <Address>
+                        <AddressLine>88 Cumberland St</AddressLine>
+                        <CityName>Sydney</CityName>
+                        <PostalCode>2000</PostalCode>
+                        <CountryName>AU</CountryName>
+                      </Address>
+                    </Customer>
+                  </Profile>
+                </ProfileInfo>
+              </Profiles>
+            </ResGuest>
+          </ResGuests>
+          <ResGlobalInfo>
+            <Guarantee>
+              <GuaranteesAccepted>
+                <GuaranteeAccepted>
+                  <PaymentCard CardCode="VI" CardNumber="8888" CardType="1" ExpireDate="0820">
+                    <CardHolderName>J McDonald</CardHolderName>
+                  </PaymentCard>
+                </GuaranteeAccepted>
+              </GuaranteesAccepted>
+            </Guarantee>
+            <Fees>
+              <Fee Amount="42.60" Code="27" TaxInclusive="true" Type="Inclusive">
+                <Description Name="Commission">
+                  <Text />
+                </Description>
+              </Fee>
+            </Fees>
+            <Total AmountAfterTax="355.00" CurrencyCode="AUD" />
+            <HotelReservationIDs>
+              <HotelReservationID ResID_Type="14" ResID_Value="37210" />
+            </HotelReservationIDs>
+            <Profiles>
+              <ProfileInfo>
+                <Profile ProfileType="1">
+                  <Customer>
+                    <PersonName>
+                      <GivenName>James</GivenName>
+                      <Surname>Test</Surname>
+                    </PersonName>
+                    <Telephone PhoneNumber="1111111111" />
+                    <Address>
+                      <AddressLine>88 Cumberland St</AddressLine>
+                      <CityName>Sydney</CityName>
+                      <PostalCode>2000</PostalCode>
+                      <CountryName>AU</CountryName>
+                    </Address>
+                  </Customer>
+                </Profile>
+              </ProfileInfo>
+            </Profiles>
+          </ResGlobalInfo>
+        </HotelReservation>
+        <HotelReservation CreateDateTime="2016-06-27T00:29:52+00:00" ResStatus="Book">
+          <POS>
+            <Source>
+              <RequestorID ID="SITEMINDER" Type="22" />
+              <BookingChannel Primary="true" Type="7">
+                <CompanyName Code="AGO">Agoda</CompanyName>
+              </BookingChannel>
+            </Source>
+          </POS>
+          <UniqueID ID="AGO-20790" Type="14" />
+          <UniqueID ID="46363" ID_Context="MESSAGE_UNIQUE_ID" Type="16" />
+          <RoomStays>
+            <RoomStay>
+              <RoomTypes>
+                <RoomType RoomTypeCode="DR" />
+              </RoomTypes>
+              <RatePlans>
+                <RatePlan EffectiveDate="2016-06-30" ExpireDate="2016-07-03" RatePlanCode="BB" />
+              </RatePlans>
+              <RoomRates>
+                <RoomRate NumberOfUnits="1" RatePlanCode="BB" RoomTypeCode="DR">
+                  <Rates>
+                    <Rate EffectiveDate="2016-06-30" ExpireDate="2016-07-01" RateTimeUnit="Day" UnitMultiplier="1">
+                      <Total AmountAfterTax="33.66" CurrencyCode="USD" />
+                    </Rate>
+                    <Rate EffectiveDate="2016-07-01" ExpireDate="2016-07-02" RateTimeUnit="Day" UnitMultiplier="1">
+                      <Total AmountAfterTax="33.66" CurrencyCode="USD" />
+                    </Rate>
+                    <Rate EffectiveDate="2016-07-02" ExpireDate="2016-07-03" RateTimeUnit="Day" UnitMultiplier="1">
+                      <Total AmountAfterTax="0.00" CurrencyCode="USD" />
+                    </Rate>
+                  </Rates>
+                </RoomRate>
+              </RoomRates>
+              <GuestCounts>
+                <GuestCount AgeQualifyingCode="10" Count="2" />
+              </GuestCounts>
+              <TimeSpan End="2016-07-03" Start="2016-06-30" />
+              <Total AmountAfterTax="67.32" AmountBeforeTax="58.54" CurrencyCode="USD">
+                <Taxes Amount="8.78" />
+              </Total>
+              <BasicPropertyInfo HotelCode="Emerald498" />
+            </RoomStay>
+          </RoomStays>
+          <ResGuests>
+            <ResGuest PrimaryIndicator="true" ResGuestRPH="1">
+              <Profiles>
+                <ProfileInfo>
+                  <Profile ProfileType="1">
+                    <Customer>
+                      <PersonName>
+                        <GivenName>Frank</GivenName>
+                        <Surname>Test</Surname>
+                      </PersonName>
+                      <Address />
+                    </Customer>
+                  </Profile>
+                </ProfileInfo>
+              </Profiles>
+            </ResGuest>
+          </ResGuests>
+          <ResGlobalInfo>
+            <Guarantee>
+              <GuaranteesAccepted>
+                <GuaranteeAccepted>
+                  <PaymentCard CardCode="VI" CardType="1" ExpireDate="1216">
+                    <CardHolderName>Frank Test</CardHolderName>
+                  </PaymentCard>
+                </GuaranteeAccepted>
+              </GuaranteesAccepted>
+            </Guarantee>
+            <Total AmountAfterTax="67.32" AmountBeforeTax="58.54" CurrencyCode="USD">
+              <Taxes Amount="8.78" />
+            </Total>
+            <HotelReservationIDs>
+              <HotelReservationID ResID_Type="14" ResID_Value="20790" />
+            </HotelReservationIDs>
+            <Profiles>
+              <ProfileInfo>
+                <Profile ProfileType="1">
+                  <Customer>
+                    <PersonName>
+                      <GivenName>Frank</GivenName>
+                      <Surname>Test</Surname>
+                    </PersonName>
+                    <Address />
+                  </Customer>
+                </Profile>
+              </ProfileInfo>
+            </Profiles>
+            <Comments>
+              <Comment>
+                <Text>Non smoking</Text>
+              </Comment>
+            </Comments>
+          </ResGlobalInfo>
+        </HotelReservation>
+      </ReservationsList>
+    </OTA_ResRetrieveRS>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

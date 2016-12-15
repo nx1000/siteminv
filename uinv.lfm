@@ -1,0 +1,82 @@
+object Form1: TForm1
+  Left = 594
+  Height = 504
+  Top = 295
+  Width = 632
+  Caption = 'Form1'
+  ClientHeight = 504
+  ClientWidth = 632
+  LCLVersion = '1.4.4.0'
+  object btStart: TButton
+    Left = 24
+    Height = 25
+    Top = 24
+    Width = 75
+    Caption = 'START'
+    OnClick = btStartClick
+    TabOrder = 0
+  end
+  object btStop: TButton
+    Left = 104
+    Height = 25
+    Top = 24
+    Width = 75
+    Caption = 'STOP'
+    OnClick = btStopClick
+    TabOrder = 1
+  end
+  object Memo1: TMemo
+    Left = 24
+    Height = 408
+    Top = 64
+    Width = 584
+    Lines.Strings = (
+      'Memo1'
+    )
+    TabOrder = 2
+  end
+  object ckRateCode: TCheckBox
+    Left = 504
+    Height = 23
+    Top = 26
+    Width = 92
+    Caption = 'With Rate'
+    TabOrder = 3
+  end
+  object mysql55: TMySQL55Connection
+    Connected = False
+    LoginPrompt = False
+    KeepConnection = False
+    Transaction = SQLTransaction1
+    LogEvents = []
+    left = 304
+    top = 24
+  end
+  object SQLQuery1: TSQLQuery
+    FieldDefs = <>
+    Params = <>
+    left = 392
+    top = 88
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = False
+    Database = mysql55
+    left = 400
+    top = 24
+  end
+  object http: TIdHTTP
+    AllowCookies = True
+    ProxyParams.BasicAuthentication = False
+    ProxyParams.ProxyPort = 0
+    Request.ContentLength = -1
+    Request.Date = 0
+    Request.Expires = 0
+    Request.LastModified = 0
+    Request.Accept = 'text/html, */*'
+    Request.BasicAuthentication = False
+    Request.UserAgent = 'Mozilla/3.0 (compatible; Indy Library)'
+    HTTPOptions = [hoForceEncodeParams]
+    left = 325
+    top = 172
+  end
+end

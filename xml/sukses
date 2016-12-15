@@ -1,0 +1,145 @@
+function TfmRsvEntry.getnewrsvno:String;
+var data : TSimpleDataSet;
+    cursq : Integer;
+    nxsq : String;
+begin
+  data := TSimpleDataSet.Create(Self);
+  try
+    with data do begin
+      Connection := dm.mySQL1;
+      //DataSet.CommandText := 'select ifnull(max(rsvno),0) as maxrsvno from fofrsv';
+      DataSet.CommandText := 'select ifnull(max(rsvnonx),0) as maxrsvno from pssps where pscd='+QuotedStr(pscdrm);
+      Open;
+    end;
+    cursq := StrToInt(data['maxrsvno']);
+    nxsq := IntToStr(cursq+1);
+    TempRsvNo := Format('%.8d',[StrToInt(data['maxrsvno']+1)]);
+    SQLExec('update pssps set rsvnonx='+nxsq+' where pscd='+QuotedStr(pscdrm));
+    Result := Format('%.8d',[StrToInt(data['maxrsvno']+1)]);
+  finally
+    data.Close;
+    data.Free;
+  end;
+end;
+
+
+---------------
+
+function TForm1.getNextRsvno: String;
+var rsvno,newrsvno : Integer;
+begin
+
+     rsvno:= GetDataInt('select ifnull(max(rsvnonx),0) as maxrsvno from pssps where pscd='+QuotedStr(pscdrm),'maxrsvno');
+     newrsvno := rsvno + 1;
+
+     SQLExecEx('update pssps set rsvnonx='+IntToStr(newrsvno)+' where pscd='+QuotedStr(pscdrm));
+     Result := Format('%.8d',[newrsvno]);
+
+end;  
+
+function TForm1.GetDataInt(query,fieldnm: String) : Integer;
+var data : TSQLQuery;
+begin
+  try
+    data := TSQLQuery.Create(nil);
+
+    try
+      data.Database := mysql55;
+      data.SQL.Text := query;
+      try
+         data.Open;
+
+      except
+        ConnectDB;
+      end;
+      if data.RecordCount > 0 then
+        Result := data.FieldByName(fieldnm).AsInteger
+      else
+        Result := 0;
+    finally
+      data.Free;
+    end;
+  except
+    on E: Exception do begin
+      ShowMessage('Error 1003: '+E.ClassName + ' ' + E.Message);
+
+    end;
+  end;
+
+end;      
+
+procedure TForm1.ConnectDB;
+var tryagain: Boolean;
+    retry : Integer;
+begin
+  tryagain:=True;
+
+  mysql55.Close(True);
+  mysql55.Connected:=False;
+  mysql55.HostName:= hostname;
+  mysql55.UserName:= 'root';
+  mysql55.Password:= 'p3nd3kar';
+  mysql55.DatabaseName:= databasename;
+
+
+  retry := 0;
+
+  while tryagain=True do begin
+
+     try
+       mysql55.Connected:=True;
+       if mysql55.Connected=True then tryagain:=False;
+     except
+       Memo2.Lines.Add('retrying to connect...');
+       Sleep(1000);
+     end;
+     retry := retry + 1;
+     if retry=3 then begin
+        ShowMessage('time out');
+        Exit;
+     end;
+
+  end;
+
+  //mysql55.Open;
+
+  pscdrm := GetDataStr('select pscdrm from iassystem','pscdrm');
+  itemcdrm := GetDataStr('select itemcdrm from iassystem','itemcdrm');
+
+end;       
+
+function TForm1.SQLExecEx(querystr: String) : Integer;
+var data : TSQLQuery;
+
+    ts : TStrings;
+begin
+
+  if querystr='' then Exit;
+  Result := 0;
+  data := TSQLQuery.Create(nil);
+  ts := TStringList.Create;
+  try
+    data.DataBase := mysql55;
+    data.ParamCheck := False;
+    ts.Add(querystr);
+    data.SQL.Text := querystr;
+    try
+      data.ExecSQL;
+      SQLTransaction1.CommitRetaining;
+      Result := 1;
+    except
+      on E: Exception do begin
+        //ts.SaveToFile('error.txt');
+        //ShowMessage('Error 1001 : ' + E.ClassName + ' ' + E.Message);
+        Memo2.Lines.Add('error: '+E.Message);
+        ConnectDB;
+      end;
+    end;
+
+  finally
+    ts.Free;
+    data.Free;
+  end;
+
+  //
+end;         

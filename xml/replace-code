@@ -1,0 +1,20 @@
+time-xxx
+echo-xxx
+
+start-xxx      (yyyy-mm-dd)
+end-xxx        (yyyy-mm-dd)
+
+room-xxx
+rate-xxx
+
+book-xxx
+
+curr-xxx
+amt-xxx
+
+
+TR		BAR			20
+DR		BAR			15
+DR		BB			15
+
+

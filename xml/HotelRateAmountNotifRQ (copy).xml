@@ -1,0 +1,31 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP-ENV:Header>
+    <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" soapenv:mustUnderstand="1">
+      <wsse:UsernameToken>
+        <wsse:Username>Emerald</wsse:Username>
+        <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">8Ex8Yk909c354uf2cr54EMeV</wsse:Password>
+      </wsse:UsernameToken>
+    </wsse:Security>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+  <OTA_HotelRateAmountNotifRQ xmlns="http://www.opentravel.org/OTA/2003/05" TimeStamp="time-xxx" Version="1.0" EchoToken="echo-xxx">
+  <POS>
+    <Source>
+      <RequestorID Type="22" ID="EMERALD"/>
+    </Source>
+  </POS>
+  <RateAmountMessages HotelCode="Emerald498">
+    <RateAmountMessage>
+      <StatusApplicationControl InvTypeCode="room-xxx" rate-xxx/>
+      <Rates>
+        <Rate CurrencyCode="curr-xxx" Start="start-xxx" End="end-xxx" Mon="1" Tue="1" Weds="1" Thur="1" Fri="1" Sat="1" Sun="1">
+          <BaseByGuestAmts>
+            <BaseByGuestAmt AmountAfterTax="amt-xxx"/>
+          </BaseByGuestAmts>
+        </Rate>
+      </Rates>
+    </RateAmountMessage>
+  </RateAmountMessages>
+</OTA_HotelRateAmountNotifRQ>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

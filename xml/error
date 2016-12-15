@@ -1,0 +1,297 @@
+Memo1
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP-ENV:Header>
+    <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" soapenv:mustUnderstand="1">
+      <wsse:UsernameToken>
+        <wsse:Username>Emerald</wsse:Username>
+        <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">8Ex8Yk909c354uf2cr54EMeV</wsse:Password>
+      </wsse:UsernameToken>
+    </wsse:Security>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+	<OTA_NotifReportRQ xmlns="http://www.opentravel.org/OTA/2003/05" Version="1.0" TimeStamp="2016-06-27T11:12:25+07:00" EchoToken="echo-string">
+		<Success/>
+		<NotifDetails>
+    <HotelNotifReport>
+      <HotelReservations>
+        <HotelReservation CreateDateTime="2016-06-27T11:12:25+07:00" ResStatus="Book">
+          <UniqueID Type="16" ID="BBN-61986"/>
+          <ResGlobalInfo>
+            <HotelReservationIDs>
+              <HotelReservationID ResID_Type="14" ResID_Value="00008509"/>
+            </HotelReservationIDs>
+          </ResGlobalInfo>
+        </HotelReservation>
+      </HotelReservations>
+    </HotelNotifReport>
+  </NotifDetails>
+</OTA_NotifReportRQ>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+
+
+
+
+
+
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header/><SOAP-ENV:Body><OTA_NotifReportRS xmlns="http://www.opentravel.org/OTA/2003/05" EchoToken="echo-string" TimeStamp="2016-06-27T04:12:27+00:00" Version="1.0"><Errors><Error Type="10">ID 'BBN-61986' is not a valid number</Error></Errors></OTA_NotifReportRS></SOAP-ENV:Body></SOAP-ENV:Envelope>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP-ENV:Header>
+    <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" soapenv:mustUnderstand="1">
+      <wsse:UsernameToken>
+        <wsse:Username>Emerald</wsse:Username>
+        <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">8Ex8Yk909c354uf2cr54EMeV</wsse:Password>
+      </wsse:UsernameToken>
+    </wsse:Security>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+	<OTA_NotifReportRQ xmlns="http://www.opentravel.org/OTA/2003/05" Version="1.0" TimeStamp="2016-06-27T11:12:27+07:00" EchoToken="echo-string">
+		<Success/>
+		<NotifDetails>
+    <HotelNotifReport>
+      <HotelReservations>
+        <HotelReservation CreateDateTime="2016-06-27T11:12:27+07:00" ResStatus="Book">
+          <UniqueID Type="16" ID="IHW-73118"/>
+          <ResGlobalInfo>
+            <HotelReservationIDs>
+              <HotelReservationID ResID_Type="14" ResID_Value="00008510"/>
+            </HotelReservationIDs>
+          </ResGlobalInfo>
+        </HotelReservation>
+      </HotelReservations>
+    </HotelNotifReport>
+  </NotifDetails>
+</OTA_NotifReportRQ>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+
+
+
+
+
+
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header/><SOAP-ENV:Body><OTA_NotifReportRS xmlns="http://www.opentravel.org/OTA/2003/05" EchoToken="echo-string" TimeStamp="2016-06-27T04:12:28+00:00" Version="1.0"><Errors><Error Type="10">ID 'IHW-73118' is not a valid number</Error></Errors></OTA_NotifReportRS></SOAP-ENV:Body></SOAP-ENV:Envelope>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP-ENV:Header>
+    <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" soapenv:mustUnderstand="1">
+      <wsse:UsernameToken>
+        <wsse:Username>Emerald</wsse:Username>
+        <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">8Ex8Yk909c354uf2cr54EMeV</wsse:Password>
+      </wsse:UsernameToken>
+    </wsse:Security>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+	<OTA_NotifReportRQ xmlns="http://www.opentravel.org/OTA/2003/05" Version="1.0" TimeStamp="2016-06-27T11:12:28+07:00" EchoToken="echo-string">
+		<Success/>
+		<NotifDetails>
+    <HotelNotifReport>
+      <HotelReservations>
+        <HotelReservation CreateDateTime="2016-06-27T11:12:28+07:00" ResStatus="Book">
+          <UniqueID Type="16" ID="BDC-19406"/>
+          <ResGlobalInfo>
+            <HotelReservationIDs>
+              <HotelReservationID ResID_Type="14" ResID_Value="00008511"/>
+            </HotelReservationIDs>
+          </ResGlobalInfo>
+        </HotelReservation>
+      </HotelReservations>
+    </HotelNotifReport>
+  </NotifDetails>
+</OTA_NotifReportRQ>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+
+
+
+
+
+
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header/><SOAP-ENV:Body><OTA_NotifReportRS xmlns="http://www.opentravel.org/OTA/2003/05" EchoToken="echo-string" TimeStamp="2016-06-27T04:12:30+00:00" Version="1.0"><Errors><Error Type="10">ID 'BDC-19406' is not a valid number</Error></Errors></OTA_NotifReportRS></SOAP-ENV:Body></SOAP-ENV:Envelope>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP-ENV:Header>
+    <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" soapenv:mustUnderstand="1">
+      <wsse:UsernameToken>
+        <wsse:Username>Emerald</wsse:Username>
+        <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">8Ex8Yk909c354uf2cr54EMeV</wsse:Password>
+      </wsse:UsernameToken>
+    </wsse:Security>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+	<OTA_NotifReportRQ xmlns="http://www.opentravel.org/OTA/2003/05" Version="1.0" TimeStamp="2016-06-27T11:12:30+07:00" EchoToken="echo-string">
+		<Success/>
+		<NotifDetails>
+    <HotelNotifReport>
+      <HotelReservations>
+        <HotelReservation CreateDateTime="2016-06-27T11:12:30+07:00" ResStatus="Book">
+          <UniqueID Type="16" ID="AGO-87917"/>
+          <ResGlobalInfo>
+            <HotelReservationIDs>
+              <HotelReservationID ResID_Type="14" ResID_Value="00008512"/>
+            </HotelReservationIDs>
+          </ResGlobalInfo>
+        </HotelReservation>
+      </HotelReservations>
+    </HotelNotifReport>
+  </NotifDetails>
+</OTA_NotifReportRQ>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+
+
+
+
+
+
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header/><SOAP-ENV:Body><OTA_NotifReportRS xmlns="http://www.opentravel.org/OTA/2003/05" EchoToken="echo-string" TimeStamp="2016-06-27T04:12:31+00:00" Version="1.0"><Errors><Error Type="10">ID 'AGO-87917' is not a valid number</Error></Errors></OTA_NotifReportRS></SOAP-ENV:Body></SOAP-ENV:Envelope>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP-ENV:Header>
+    <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" soapenv:mustUnderstand="1">
+      <wsse:UsernameToken>
+        <wsse:Username>Emerald</wsse:Username>
+        <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">8Ex8Yk909c354uf2cr54EMeV</wsse:Password>
+      </wsse:UsernameToken>
+    </wsse:Security>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+	<OTA_NotifReportRQ xmlns="http://www.opentravel.org/OTA/2003/05" Version="1.0" TimeStamp="2016-06-27T11:12:32+07:00" EchoToken="echo-string">
+		<Success/>
+		<NotifDetails>
+    <HotelNotifReport>
+      <HotelReservations>
+        <HotelReservation CreateDateTime="2016-06-27T11:12:32+07:00" ResStatus="Book">
+          <UniqueID Type="16" ID="EXP-56228"/>
+          <ResGlobalInfo>
+            <HotelReservationIDs>
+              <HotelReservationID ResID_Type="14" ResID_Value="00008513"/>
+            </HotelReservationIDs>
+          </ResGlobalInfo>
+        </HotelReservation>
+      </HotelReservations>
+    </HotelNotifReport>
+  </NotifDetails>
+</OTA_NotifReportRQ>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+
+
+
+
+
+
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header/><SOAP-ENV:Body><OTA_NotifReportRS xmlns="http://www.opentravel.org/OTA/2003/05" EchoToken="echo-string" TimeStamp="2016-06-27T04:12:33+00:00" Version="1.0"><Errors><Error Type="10">ID 'EXP-56228' is not a valid number</Error></Errors></OTA_NotifReportRS></SOAP-ENV:Body></SOAP-ENV:Envelope>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP-ENV:Header>
+    <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" soapenv:mustUnderstand="1">
+      <wsse:UsernameToken>
+        <wsse:Username>Emerald</wsse:Username>
+        <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">8Ex8Yk909c354uf2cr54EMeV</wsse:Password>
+      </wsse:UsernameToken>
+    </wsse:Security>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+	<OTA_NotifReportRQ xmlns="http://www.opentravel.org/OTA/2003/05" Version="1.0" TimeStamp="2016-06-27T11:12:33+07:00" EchoToken="echo-string">
+		<Success/>
+		<NotifDetails>
+    <HotelNotifReport>
+      <HotelReservations>
+        <HotelReservation CreateDateTime="2016-06-27T11:12:33+07:00" ResStatus="Book">
+          <UniqueID Type="16" ID="AGO-92098"/>
+          <ResGlobalInfo>
+            <HotelReservationIDs>
+              <HotelReservationID ResID_Type="14" ResID_Value="00008514"/>
+            </HotelReservationIDs>
+          </ResGlobalInfo>
+        </HotelReservation>
+      </HotelReservations>
+    </HotelNotifReport>
+  </NotifDetails>
+</OTA_NotifReportRQ>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+
+
+
+
+
+
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header/><SOAP-ENV:Body><OTA_NotifReportRS xmlns="http://www.opentravel.org/OTA/2003/05" EchoToken="echo-string" TimeStamp="2016-06-27T04:12:34+00:00" Version="1.0"><Errors><Error Type="10">ID 'AGO-92098' is not a valid number</Error></Errors></OTA_NotifReportRS></SOAP-ENV:Body></SOAP-ENV:Envelope>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP-ENV:Header>
+    <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" soapenv:mustUnderstand="1">
+      <wsse:UsernameToken>
+        <wsse:Username>Emerald</wsse:Username>
+        <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">8Ex8Yk909c354uf2cr54EMeV</wsse:Password>
+      </wsse:UsernameToken>
+    </wsse:Security>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+	<OTA_NotifReportRQ xmlns="http://www.opentravel.org/OTA/2003/05" Version="1.0" TimeStamp="2016-06-27T11:12:34+07:00" EchoToken="echo-string">
+		<Success/>
+		<NotifDetails>
+    <HotelNotifReport>
+      <HotelReservations>
+        <HotelReservation CreateDateTime="2016-06-27T11:12:34+07:00" ResStatus="Book">
+          <UniqueID Type="16" ID="BDC-37210"/>
+          <ResGlobalInfo>
+            <HotelReservationIDs>
+              <HotelReservationID ResID_Type="14" ResID_Value="00008515"/>
+            </HotelReservationIDs>
+          </ResGlobalInfo>
+        </HotelReservation>
+      </HotelReservations>
+    </HotelNotifReport>
+  </NotifDetails>
+</OTA_NotifReportRQ>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+
+
+
+
+
+
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header/><SOAP-ENV:Body><OTA_NotifReportRS xmlns="http://www.opentravel.org/OTA/2003/05" EchoToken="echo-string" TimeStamp="2016-06-27T04:12:36+00:00" Version="1.0"><Errors><Error Type="10">ID 'BDC-37210' is not a valid number</Error></Errors></OTA_NotifReportRS></SOAP-ENV:Body></SOAP-ENV:Envelope>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP-ENV:Header>
+    <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" soapenv:mustUnderstand="1">
+      <wsse:UsernameToken>
+        <wsse:Username>Emerald</wsse:Username>
+        <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">8Ex8Yk909c354uf2cr54EMeV</wsse:Password>
+      </wsse:UsernameToken>
+    </wsse:Security>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+	<OTA_NotifReportRQ xmlns="http://www.opentravel.org/OTA/2003/05" Version="1.0" TimeStamp="2016-06-27T11:12:36+07:00" EchoToken="echo-string">
+		<Success/>
+		<NotifDetails>
+    <HotelNotifReport>
+      <HotelReservations>
+        <HotelReservation CreateDateTime="2016-06-27T11:12:36+07:00" ResStatus="Book">
+          <UniqueID Type="16" ID="AGO-20790"/>
+          <ResGlobalInfo>
+            <HotelReservationIDs>
+              <HotelReservationID ResID_Type="14" ResID_Value="00008516"/>
+            </HotelReservationIDs>
+          </ResGlobalInfo>
+        </HotelReservation>
+      </HotelReservations>
+    </HotelNotifReport>
+  </NotifDetails>
+</OTA_NotifReportRQ>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+
+
+
+
+
+
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header/><SOAP-ENV:Body><OTA_NotifReportRS xmlns="http://www.opentravel.org/OTA/2003/05" EchoToken="echo-string" TimeStamp="2016-06-27T04:12:37+00:00" Version="1.0"><Errors><Error Type="10">ID 'AGO-20790' is not a valid number</Error></Errors></OTA_NotifReportRS></SOAP-ENV:Body></SOAP-ENV:Envelope>
