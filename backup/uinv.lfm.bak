@@ -3,7 +3,7 @@ object Form1: TForm1
   Height = 504
   Top = 295
   Width = 632
-  Caption = 'Form1'
+  Caption = 'Siteminder Inventory Updater'
   ClientHeight = 504
   ClientWidth = 632
   LCLVersion = '1.4.4.0'
@@ -33,15 +33,24 @@ object Form1: TForm1
     Lines.Strings = (
       'Memo1'
     )
+    ScrollBars = ssBoth
     TabOrder = 2
   end
   object ckRateCode: TCheckBox
     Left = 504
-    Height = 23
+    Height = 24
     Top = 26
     Width = 92
     Caption = 'With Rate'
     TabOrder = 3
+  end
+  object ckDirect: TCheckBox
+    Left = 392
+    Height = 24
+    Top = 26
+    Width = 103
+    Caption = 'Direct Send'
+    TabOrder = 4
   end
   object mysql55: TMySQL55Connection
     Connected = False
@@ -49,8 +58,8 @@ object Form1: TForm1
     KeepConnection = False
     Transaction = SQLTransaction1
     LogEvents = []
-    left = 304
-    top = 24
+    left = 248
+    top = 184
   end
   object SQLQuery1: TSQLQuery
     FieldDefs = <>
@@ -61,10 +70,11 @@ object Form1: TForm1
   object SQLTransaction1: TSQLTransaction
     Active = False
     Database = mysql55
-    left = 400
-    top = 24
+    left = 408
+    top = 200
   end
   object http: TIdHTTP
+    IOHandler = IdSSLIOHandlerSocketOpenSSL1
     AllowCookies = True
     ProxyParams.BasicAuthentication = False
     ProxyParams.ProxyPort = 0
@@ -78,5 +88,15 @@ object Form1: TForm1
     HTTPOptions = [hoForceEncodeParams]
     left = 325
     top = 172
+  end
+  object IdSSLIOHandlerSocketOpenSSL1: TIdSSLIOHandlerSocketOpenSSL
+    MaxLineAction = maException
+    Port = 0
+    DefaultPort = 0
+    SSLOptions.Mode = sslmUnassigned
+    SSLOptions.VerifyMode = []
+    SSLOptions.VerifyDepth = 0
+    left = 175
+    top = 107
   end
 end

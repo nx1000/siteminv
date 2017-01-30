@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, mysql55conn, sqldb, FileUtil, Forms, Controls, Graphics,
-  Dialogs, StdCtrls, DateUtils, IdHTTP;
+  Dialogs, StdCtrls, DateUtils, IdHTTP, IdSSLOpenSSL;
 
 type
     TAct = (staah_check,staah_update,staah_get);
@@ -18,8 +18,10 @@ type
   TForm1 = class(TForm)
     btStart: TButton;
     btStop: TButton;
+    ckDirect: TCheckBox;
     ckRateCode: TCheckBox;
     http: TIdHTTP;
+    IdSSLIOHandlerSocketOpenSSL1: TIdSSLIOHandlerSocketOpenSSL;
     Memo1: TMemo;
     mysql55: TMySQL55Connection;
     SQLQuery1: TSQLQuery;
@@ -44,6 +46,7 @@ type
     roomid,sroomid : String;
     iRoomAv : Integer;
     echostr : String;
+    id : Integer;
   end;
 
 var
@@ -56,17 +59,23 @@ implementation
 { TForm1 }
 
 procedure TForm1.ConnectDB;
+var sett : TStrings;
 begin
-  mysql55.HostName:= 'localhost';
+
+  sett := TStringList.Create;
+  sett.LoadFromFile('hostn.txt');
+
+  mysql55.HostName:= sett.Strings[0];
   mysql55.UserName:= 'root';
   mysql55.Password:= 'p3nd3kar';
-  mysql55.DatabaseName:='rsp';
+  mysql55.DatabaseName:= sett.Strings[1];
   mysql55.Open;
+
+  sett.Free;
 end;
 
 procedure TForm1.btStartClick(Sender: TObject);
-var id : Integer;
-    orifromdt : TDate;
+var orifromdt : TDate;
     cmdstr: String;
     channelup : TSQLQuery;
 
@@ -80,6 +89,7 @@ begin
   running := True;
 
   while running do begin
+    if running=False then Exit;
     if mysql55.Connected=False then ConnectDB;
     if Memo1.Lines.Count > 1000 then begin
        Memo1.Lines.Clear;
@@ -90,7 +100,7 @@ begin
 
     if channelup.Active=True then channelup.Close;
     //channelupd.SQL.Text:='select min(fromdt) as fromdt,max(todt) as todt,roomtpcd from channelupd where processed=0 and roomtpcd<>'''' group by roomtpcd';
-    channelup.SQL.Text:='select id,fromdt,todt,roomtpcd from channelupd where processed=0 and roomtpcd<>'''' ';
+    channelup.SQL.Text:='select id,fromdt,todt,roomtpcd from channelupd where processed=0 and roomtpcd<>'''' and roomtpcd in (select sroomid from siteminder_roomid) order by fromdt,id';
     //Memo1.Lines.Add(channelup.SQL.Text);
     channelup.Open;
     channelup.First;
@@ -110,9 +120,11 @@ begin
 
       channelup.Next;
       //cmdstr := 'update channelupd set processed=1 where roomtpcd='+QuotedStr(roomid);
-      cmdstr := 'update channelupd set processed=1 where id='+IntToStr(id);
-      mysql55.ExecuteDirect(cmdstr);
-      SQLTransaction1.CommitRetaining;
+
+      // ===> PINDAH DI BAGIAN BAWAH
+      //cmdstr := 'update channelupd set processed=1 where id='+IntToStr(id);
+      //mysql55.ExecuteDirect(cmdstr);
+      //SQLTransaction1.CommitRetaining;
 
     end;
     Application.ProcessMessages;
@@ -120,10 +132,15 @@ begin
 
     Sleep(5000);
     Memo1.Lines.Add(FormatDateTime('yyyy-mm-dd hh:nn:ss',Now)+' -- no data');
+
+    if Memo1.Lines.Count=100 then begin
+       Memo1.Lines.Clear;
+       end;
     channelup.Close;
     channelup.Free;
 
     mysql55.Close();
+
 
   end;
 end;
@@ -134,6 +151,7 @@ begin
   btStop.Enabled := False;
 
   running := False;
+  Application.ProcessMessages;
 
 end;
 
@@ -141,7 +159,7 @@ function TForm1.setAvailable(fmdt,todt:TDate;sRoomTyp:String): String;
 var filenm : String;
     strlist : TStrings;
     newtxt : String;
-
+    c : Integer;
 begin
 
   strlist := TStringList.Create;
@@ -161,6 +179,22 @@ begin
   end
   else begin
      newtxt := StringReplace(newtxt,'rate-xxx','',[rfIgnoreCase,rfReplaceAll]);
+  end;
+
+  iRoomAv := CountRoomAv(FormatDateTime('yyyy-mm-dd',fmdt),sRoomTyp);
+
+  c := GetDataInt('select count(*) as cnt from siteminder_roomav where '+
+                  ' roomcd='+QuotedStr(sRoomTyp)+
+                  ' and fromdt <='+QuotedStr(FormatDateTime('yyyy-mm-dd',fmdt))+
+                  ' and todt > '+QuotedStr(FormatDateTime('yyyy-mm-dd',fmdt))+
+                  ' and active=1','cnt');
+
+  if c > 0 then begin
+     iRoomAv := GetDataInt('select qty as cnt from siteminder_roomav where '+
+                  ' roomcd='+QuotedStr(sRoomTyp)+
+                  ' and fromdt <='+QuotedStr(FormatDateTime('yyyy-mm-dd',fmdt))+
+                  ' and todt > '+QuotedStr(FormatDateTime('yyyy-mm-dd',fmdt))+
+                  ' and active=1','qty');
   end;
 
   newtxt := StringReplace(newtxt,'book-xxx',IntToStr(iRoomAv),[rfIgnoreCase,rfReplaceAll]);
@@ -291,6 +325,7 @@ begin
   end;
 
   Result := TotRoom-FO-M-Grp-Allot;
+  if Result < 0 then Result := 0;
 
 
 
@@ -301,7 +336,10 @@ var xmlstr : AnsiString;
     res,res2: String;
     cmdstr : String;
     arrdt,depdt : String;
+    pos : Integer;
 begin
+
+  Memo1.Lines.Clear;
 
   while frdate <= todate do begin
         arrdt := FormatDateTime('yyyy-mm-dd',frdate);
@@ -310,27 +348,61 @@ begin
         xmlstr:= setAvailable(frdate,frdate,staahroom); //MakeJSON;
 
         Memo1.Lines.Add(FormatDateTime('yyyy-mm-dd hh:nn:ss',Now)+' -- updating room type :'+sroomid+', date :'+arrdt+', qty :'+ IntToStr(iRoomAv));
-        Memo1.Lines.Add(xmlstr);;
+        //Memo1.Lines.Add(xmlstr);;
 
+
+        if ckDirect.Checked = True then begin;
+        // TADINYA LANGSUNG KIRIM KE SITEMINDER
+
+        res := '';
         res := ContactSiteMinder(staah_update,xmlstr);
+        pos := AnsiPos('Success',res);
+
+        if pos <> 0 then begin
+           Memo1.Lines.Add('Success');
+           cmdstr := 'update channelupd set processed=1,ref='+QuotedStr(echostr)+' where id='+IntToStr(id);
+           mysql55.ExecuteDirect(cmdstr);
+           SQLTransaction1.CommitRetaining;
+        end;
+
+        end
+
+        else begin
+
+        // SEKARANG MASUK ANTRIAN AJA
+
+
+
+        cmdstr := 'insert into xmlchain (xmlstr,typ) values ('+QuotedStr(xmlstr)+',''A'')';
+        mysql55.ExecuteDirect(cmdstr);
+        SQLTransaction1.CommitRetaining;
+
+        cmdstr := 'update channelupd set processed=1 where id='+IntToStr(id);
+        mysql55.ExecuteDirect(cmdstr);
+        SQLTransaction1.CommitRetaining;
+
+        end;
+
+
 
         //res2 := decode(staah_update,res);
 
         //Memo1.Lines.Add(res2);
 
-
-        cmdstr := 'insert into staah_updatelog (jsonstr,status) '+
-                  ' values ('+QuotedStr(xmlstr)+
-                  ','+QuotedStr(res)+
-                  ')';
-        mysql55.ExecuteDirect(cmdstr);
+        //cmdstr := 'insert into staah_updatelog (jsonstr,status) '+
+        //          ' values ('+QuotedStr(xmlstr)+
+        //          ','+QuotedStr(res)+
+        //          ')';
+        //mysql55.ExecuteDirect(cmdstr);
 
         frdate := frdate + 1;
         Sleep(100);
         Application.ProcessMessages;
   end;
   SQLTransaction1.CommitRetaining;
-  Memo1.Lines.SaveToFile('staah-inv-'+FormatDateTime('yyyymmddhhnnss',Now)+'.txt');;
+  if Memo1.Lines.Count=1000 then begin;
+     Memo1.Lines.SaveToFile('staah-inv-'+FormatDateTime('yyyymmddhhnnss',Now)+'.txt');
+  end;
 end;
 
 function TForm1.GetDataInt(query,fieldnm: String) : Integer;
