@@ -11,7 +11,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="26"/>
+        <UsageCount Value="36"/>
       </Unit0>
       <Unit1>
         <Filename Value="uinv.pas"/>
@@ -20,139 +20,139 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="295"/>
-        <CursorPos X="36" Y="324"/>
-        <UsageCount Value="26"/>
+        <TopLine Value="43"/>
+        <CursorPos X="11" Y="61"/>
+        <UsageCount Value="36"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="/usr/share/lazarus/1.4.4/lcl/lclmessageglue.pas"/>
         <UnitName Value="LCLMessageGlue"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="94"/>
         <CursorPos Y="114"/>
-        <UsageCount Value="10"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="14"/>
       </Unit2>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="uinv.pas"/>
-        <Caret Line="103" TopLine="85"/>
+        <Caret Line="97" TopLine="75"/>
       </Position1>
       <Position2>
         <Filename Value="uinv.pas"/>
-        <Caret Line="104" TopLine="85"/>
+        <Caret Line="98" TopLine="75"/>
       </Position2>
       <Position3>
         <Filename Value="uinv.pas"/>
-        <Caret Line="107" TopLine="85"/>
+        <Caret Line="100" TopLine="82"/>
       </Position3>
       <Position4>
         <Filename Value="uinv.pas"/>
-        <Caret Line="110" TopLine="85"/>
+        <Caret Line="102" TopLine="82"/>
       </Position4>
       <Position5>
         <Filename Value="uinv.pas"/>
-        <Caret Line="112" TopLine="85"/>
+        <Caret Line="104" TopLine="82"/>
       </Position5>
       <Position6>
         <Filename Value="uinv.pas"/>
-        <Caret Line="113" TopLine="85"/>
+        <Caret Line="98" Column="4" TopLine="82"/>
       </Position6>
       <Position7>
         <Filename Value="uinv.pas"/>
-        <Caret Line="114" TopLine="85"/>
+        <Caret Line="106" TopLine="82"/>
       </Position7>
       <Position8>
         <Filename Value="uinv.pas"/>
-        <Caret Line="96" TopLine="85"/>
+        <Caret Line="319" TopLine="303"/>
       </Position8>
       <Position9>
         <Filename Value="uinv.pas"/>
-        <Caret Line="97" TopLine="85"/>
+        <Caret Line="137" Column="12" TopLine="131"/>
       </Position9>
       <Position10>
         <Filename Value="uinv.pas"/>
-        <Caret Line="98" TopLine="85"/>
       </Position10>
       <Position11>
         <Filename Value="uinv.pas"/>
-        <Caret Line="99" TopLine="85"/>
+        <Caret Line="34" Column="19" TopLine="9"/>
       </Position11>
       <Position12>
         <Filename Value="uinv.pas"/>
-        <Caret Line="100" TopLine="85"/>
+        <Caret Line="385" TopLine="356"/>
       </Position12>
       <Position13>
         <Filename Value="uinv.pas"/>
-        <Caret Line="101" TopLine="85"/>
+        <Caret Line="393" Column="23" TopLine="369"/>
       </Position13>
       <Position14>
         <Filename Value="uinv.pas"/>
-        <Caret Line="102" TopLine="85"/>
+        <Caret Line="413" Column="26" TopLine="388"/>
       </Position14>
       <Position15>
         <Filename Value="uinv.pas"/>
-        <Caret Line="103" TopLine="85"/>
+        <Caret Line="439" Column="26" TopLine="414"/>
       </Position15>
       <Position16>
         <Filename Value="uinv.pas"/>
-        <Caret Line="104" TopLine="85"/>
+        <Caret Line="34" Column="19" TopLine="20"/>
       </Position16>
       <Position17>
         <Filename Value="uinv.pas"/>
-        <Caret Line="316" Column="9" TopLine="294"/>
+        <Caret Line="93" Column="25" TopLine="68"/>
       </Position17>
       <Position18>
         <Filename Value="uinv.pas"/>
-        <Caret Line="427" TopLine="387"/>
+        <Caret Line="341" Column="21" TopLine="337"/>
       </Position18>
       <Position19>
         <Filename Value="uinv.pas"/>
+        <Caret Line="342" Column="21" TopLine="338"/>
       </Position19>
       <Position20>
         <Filename Value="uinv.pas"/>
-        <Caret Line="32" Column="26"/>
+        <Caret Line="382" Column="9" TopLine="344"/>
       </Position20>
       <Position21>
         <Filename Value="uinv.pas"/>
-        <Caret Line="143" TopLine="134"/>
+        <Caret Line="502" Column="5" TopLine="476"/>
       </Position21>
       <Position22>
         <Filename Value="uinv.pas"/>
-        <Caret Line="46" Column="9" TopLine="21"/>
+        <Caret Line="51" Column="21" TopLine="36"/>
       </Position22>
       <Position23>
         <Filename Value="uinv.pas"/>
-        <Caret Line="153" Column="26" TopLine="120"/>
+        <Caret Line="64" Column="31" TopLine="48"/>
       </Position23>
       <Position24>
         <Filename Value="uinv.pas"/>
       </Position24>
       <Position25>
         <Filename Value="uinv.pas"/>
-        <Caret Line="30" Column="26"/>
+        <Caret Line="32" Column="23" TopLine="7"/>
       </Position25>
       <Position26>
         <Filename Value="uinv.pas"/>
-        <Caret Line="140" Column="29" TopLine="107"/>
+        <Caret Line="85" TopLine="73"/>
       </Position26>
       <Position27>
         <Filename Value="uinv.pas"/>
-        <Caret Line="307" Column="49" TopLine="294"/>
+        <Caret Line="86" TopLine="73"/>
       </Position27>
       <Position28>
         <Filename Value="uinv.pas"/>
+        <Caret Line="87" TopLine="73"/>
       </Position28>
       <Position29>
         <Filename Value="uinv.pas"/>
-        <Caret Line="322" Column="47" TopLine="289"/>
+        <Caret Line="89" Column="34" TopLine="73"/>
       </Position29>
       <Position30>
         <Filename Value="uinv.pas"/>
-        <Caret Line="328" Column="47" TopLine="295"/>
+        <Caret Line="91" Column="3" TopLine="89"/>
       </Position30>
     </JumpHistory>
   </ProjectSession>
@@ -163,7 +163,7 @@
         <WatchScope Value="wpsLocal"/>
         <WatchKind Value="wpkWrite"/>
         <Source Value="uinv.pas"/>
-        <Line Value="75"/>
+        <Line Value="99"/>
       </Item1>
     </BreakPoints>
   </Debugging>

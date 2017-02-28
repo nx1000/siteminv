@@ -9,11 +9,16 @@
       <ResourceType Value="res"/>
       <UseXPManifest Value="True"/>
       <Icon Value="0"/>
+      <Resources Count="1">
+        <Resource_0 FileName="../siteminder_rsv/R.ico" Type="ICON" ResourceName="R"/>
+      </Resources>
     </General>
     <i18n>
       <EnableI18N LFM="False"/>
     </i18n>
     <VersionInfo>
+      <UseVersionInfo Value="True"/>
+      <MinorVersionNr Value="1"/>
       <StringTable ProductVersion=""/>
     </VersionInfo>
     <BuildModes Count="1">
@@ -59,10 +64,13 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="../../delphicomps/indy-10.2.0.3/lazarus"/>
+      <OtherUnitFiles Value="../../Documents/indy-10.2.0.3/lazarus"/>
       <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>
+      <Debugging>
+        <GenerateDebugInfo Value="False"/>
+      </Debugging>
       <Options>
         <Win32>
           <GraphicApplication Value="True"/>
