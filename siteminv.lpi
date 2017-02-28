@@ -9,6 +9,9 @@
       <ResourceType Value="res"/>
       <UseXPManifest Value="True"/>
       <Icon Value="0"/>
+      <Resources Count="1">
+        <Resource_0 FileName="../siteminder_rsv/R.ico" Type="ICON" ResourceName="R"/>
+      </Resources>
     </General>
     <i18n>
       <EnableI18N LFM="False"/>

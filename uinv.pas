@@ -29,6 +29,8 @@ type
     procedure btStartClick(Sender: TObject);
     procedure btStopClick(Sender: TObject);
     procedure ConnectDB;
+    procedure FormActivate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
     function setAvailable(fmdt,todt:TDate;sRoomTyp:String): String;
     function FormatDateXML(dttm : TDateTime): String;
     function generateEcho(tp:String): String;
@@ -47,6 +49,7 @@ type
     iRoomAv : Integer;
     echostr : String;
     id : Integer;
+    sett : TStrings;
   end;
 
 var
@@ -55,23 +58,45 @@ var
 implementation
 
 {$R *.lfm}
+{$R *.RES}
 
 { TForm1 }
 
 procedure TForm1.ConnectDB;
-var sett : TStrings;
 begin
 
   sett := TStringList.Create;
-  sett.LoadFromFile('hostn.txt');
+  try
+    sett.LoadFromFile('hostn.txt');
 
-  mysql55.HostName:= sett.Strings[0];
-  mysql55.UserName:= 'root';
-  mysql55.Password:= 'p3nd3kar';
-  mysql55.DatabaseName:= sett.Strings[1];
-  mysql55.Open;
+    mysql55.HostName:= sett.Strings[0];
+    mysql55.UserName:= 'root';
+     mysql55.Password:= 'p3nd3kar';
+     mysql55.DatabaseName:= sett.Strings[1];
+     mysql55.Open;
 
-  sett.Free;
+  finally
+    sett.Free;
+  end;
+
+
+end;
+
+procedure TForm1.FormActivate(Sender: TObject);
+begin
+  sett := TStringList.Create;
+  try
+     sett.LoadFromFile('hostn.txt');
+     if sett.Strings[2]='1' then btStart.Click;
+     Application.ProcessMessages;
+  finally
+     sett.Free;
+  end;
+end;
+
+procedure TForm1.FormShow(Sender: TObject);
+begin
+
 end;
 
 procedure TForm1.btStartClick(Sender: TObject);
