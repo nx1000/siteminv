@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 594
+  Left = 372
   Height = 504
-  Top = 295
+  Top = 41
   Width = 632
   Caption = 'Siteminder Inventory Updater'
   ClientHeight = 504
@@ -11607,17 +11607,17 @@ object Form1: TForm1
   end
   object ckRateCode: TCheckBox
     Left = 504
-    Height = 24
+    Height = 19
     Top = 26
-    Width = 92
+    Width = 71
     Caption = 'With Rate'
     TabOrder = 3
   end
   object ckDirect: TCheckBox
     Left = 392
-    Height = 24
+    Height = 19
     Top = 26
-    Width = 103
+    Width = 80
     Caption = 'Direct Send'
     TabOrder = 4
   end

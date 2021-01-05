@@ -30,7 +30,6 @@ type
     procedure btStopClick(Sender: TObject);
     procedure ConnectDB;
     procedure FormActivate(Sender: TObject);
-    procedure FormShow(Sender: TObject);
     function setAvailable(fmdt,todt:TDate;sRoomTyp:String): String;
     function FormatDateXML(dttm : TDateTime): String;
     function generateEcho(tp:String): String;
@@ -50,6 +49,10 @@ type
     echostr : String;
     id : Integer;
     sett : TStrings;
+    tryagain : Boolean;
+    g_tgl : TDate;
+    g_roomtpcd : String;
+    g_roomav : Integer;
   end;
 
 var
@@ -58,22 +61,41 @@ var
 implementation
 
 {$R *.lfm}
-{$R *.RES}
 
 { TForm1 }
 
 procedure TForm1.ConnectDB;
+var retry : Integer;
 begin
 
   sett := TStringList.Create;
   try
     sett.LoadFromFile('hostn.txt');
+    tryagain := True;
 
     mysql55.HostName:= sett.Strings[0];
     mysql55.UserName:= 'root';
-     mysql55.Password:= 'p3nd3kar';
-     mysql55.DatabaseName:= sett.Strings[1];
-     mysql55.Open;
+    mysql55.Password:= 'p3nd3kar';
+    mysql55.DatabaseName:= sett.Strings[1];
+
+    retry := 0;
+
+    while tryagain=True do begin
+
+     try
+       mysql55.Connected:=True;
+       if mysql55.Connected=True then tryagain:=False;
+     except
+       Memo1.Lines.Add('retrying to connect...');
+       Sleep(1000);
+     end;
+     retry := retry + 1;
+     if retry=3 then begin
+        ShowMessage('time out');
+        Exit;
+     end;
+
+  end;
 
   finally
     sett.Free;
@@ -92,11 +114,6 @@ begin
   finally
      sett.Free;
   end;
-end;
-
-procedure TForm1.FormShow(Sender: TObject);
-begin
-
 end;
 
 procedure TForm1.btStartClick(Sender: TObject);
@@ -223,6 +240,9 @@ begin
   end;
 
   newtxt := StringReplace(newtxt,'book-xxx',IntToStr(iRoomAv),[rfIgnoreCase,rfReplaceAll]);
+  g_tgl:=fmdt;
+  g_roomav:=iRoomAv;
+  g_roomtpcd:=sRoomTyp;
   Result := newtxt;
 
 
@@ -398,7 +418,13 @@ begin
 
 
 
-        cmdstr := 'insert into xmlchain (xmlstr,typ) values ('+QuotedStr(xmlstr)+',''A'')';
+        cmdstr := 'insert into xmlchain (xmlstr,typ,roomtpcd,roomav,roomdt) values ('+QuotedStr(xmlstr)+
+                  ','+QuotedStr('A')+
+                  ','+QuotedStr(g_roomtpcd)+
+                  ','+IntToStr(g_roomav)+
+                  ','+QuotedStr(FormatDateTime('yyyy-mm-dd',g_tgl))+
+                  ')';
+
         mysql55.ExecuteDirect(cmdstr);
         SQLTransaction1.CommitRetaining;
 
@@ -497,7 +523,7 @@ begin
   try
     http.Request.ContentType := 'text/xml';
     http.Request.AcceptCharSet := 'utf-8';
-    http.ReadTimeout := 10000;
+    http.ReadTimeout := 5000;
 
     try
        if act=staah_update then

@@ -1,0 +1,35 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP-ENV:Header>
+    <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" soapenv:mustUnderstand="1">
+      <wsse:UsernameToken>
+        <wsse:Username>cicada</wsse:Username>
+        <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">ehs26184</wsse:Password>
+      </wsse:UsernameToken>
+    </wsse:Security>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+	<OTA_NotifReportRQ xmlns="http://www.opentravel.org/OTA/2003/05" Version="1.0" TimeStamp="time-xxx" EchoToken="echo-xxx">
+		<Success/>
+		<NotifDetails>
+    <HotelNotifReport>
+      <HotelReservations>
+        <HotelReservation CreateDateTime="time-xxx" ResStatus="Book">
+          <UniqueID Type="16" ID="RSVNO-SITEMINDER"/>
+          <ResGlobalInfo>
+            <HotelReservationIDs>
+              <HotelReservationID ResID_Type="14" ResID_Value="RSVNO-EMERALD"/>
+            </HotelReservationIDs>
+          </ResGlobalInfo>
+        </HotelReservation>
+      </HotelReservations>
+    </HotelNotifReport>
+  </NotifDetails>
+</OTA_NotifReportRQ>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+
+
+
+
+

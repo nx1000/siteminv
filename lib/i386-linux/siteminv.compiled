@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CONFIG>
-  <Compiler Value="/usr/bin/fpc" Date="1397985295"/>
-  <Params Value=" -MObjFPC -Scghi -O1 -l -vewnhibq -Fi/home/emh/projects/siteminv/lib/i386-linux -Fl/opt/gnome/lib -Fu/home/emh/Documents/indy-10.2.0.3/lazarus -Fu/usr/share/lazarus/1.4.4/components/sqldb/lib/i386-linux/gtk2 -Fu/usr/share/lazarus/1.4.4/components/ideintf/units/i386-linux/gtk2 -Fu/usr/share/lazarus/1.4.4/components/synedit/units/i386-linux/gtk2 -Fu/usr/share/lazarus/1.4.4/components/lazcontrols/lib/i386-linux/gtk2 -Fu/usr/share/lazarus/1.4.4/lcl/units/i386-linux/gtk2 -Fu/usr/share/lazarus/1.4.4/lcl/units/i386-linux -Fu/usr/share/lazarus/1.4.4/components/codetools/units/i386-linux -Fu/usr/share/lazarus/1.4.4/components/lazutils/lib/i386-linux -Fu/usr/share/lazarus/1.4.4/packager/units/i386-linux -Fu/home/emh/projects/siteminv/ -FU/home/emh/projects/siteminv/lib/i386-linux/ -dLCL -dLCLgtk2 siteminv.lpr"/>
-  <Complete Value="False"/>
-</CONFIG>
