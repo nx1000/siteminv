@@ -2,8 +2,8 @@
   <SOAP-ENV:Header>
     <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" soapenv:mustUnderstand="1">
       <wsse:UsernameToken>
-        <wsse:Username>10544</wsse:Username>
-        <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">cUg5irIu8diR</wsse:Password>
+        <wsse:Username>emerald@1673</wsse:Username>
+        <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">1673@emerald</wsse:Password>
       </wsse:UsernameToken>
     </wsse:Security>
   </SOAP-ENV:Header>
@@ -14,7 +14,7 @@
       <RequestorID Type="22" ID="EMERALD"/>
     </Source>
   </POS>
-  <AvailStatusMessages HotelCode="EHS13515">
+  <AvailStatusMessages HotelCode="1673">
     <AvailStatusMessage BookingLimit="book-xxx">
       <StatusApplicationControl Start="start-xxx" End="end-xxx" InvTypeCode="room-xxx" rate-xxx/>
     </AvailStatusMessage>

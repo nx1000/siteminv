@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, mysql55conn, sqldb, FileUtil, Forms, Controls, Graphics,
-  Dialogs, StdCtrls, DateUtils, IdHTTP, IdSSLOpenSSL;
+  Dialogs, StdCtrls, DateUtils, IdHTTP, IdSSLOpenSSL, IniFiles, base64, BlowFish;
 
 type
     TAct = (staah_check,staah_update,staah_get);
@@ -30,7 +30,6 @@ type
     procedure btStopClick(Sender: TObject);
     procedure ConnectDB;
     procedure FormActivate(Sender: TObject);
-    procedure FormShow(Sender: TObject);
     function setAvailable(fmdt,todt:TDate;sRoomTyp:String): String;
     function FormatDateXML(dttm : TDateTime): String;
     function generateEcho(tp:String): String;
@@ -39,6 +38,7 @@ type
     function GetDataInt(query,fieldnm: String) : Integer;
     function GetDataStr(query,fieldnm: String) : String;
     function ContactSiteMinder(act:TAct;txt: String): String;
+    function DecryptString(aString:string):string;
   private
     { private declarations }
   public
@@ -50,30 +50,61 @@ type
     echostr : String;
     id : Integer;
     sett : TStrings;
+    tryagain : Boolean;
+    g_tgl : TDate;
+    g_roomtpcd : String;
+    g_roomav : Integer;
+    host,db,pass,mode : String;
+    channel_user,channel_pass,channel_hotelid: String;
+    port: Integer;
   end;
 
 var
   Form1: TForm1;
 
+const
+     KUNCI = 'AsuKabeh';
+
 implementation
 
 {$R *.lfm}
-{$R *.RES}
 
 { TForm1 }
 
 procedure TForm1.ConnectDB;
+var retry : Integer;
 begin
 
   sett := TStringList.Create;
   try
-    sett.LoadFromFile('hostn.txt');
+    //sett.LoadFromFile('hostn.txt');
 
-    mysql55.HostName:= sett.Strings[0];
+    tryagain := True;
+
+    mysql55.HostName:= host;
     mysql55.UserName:= 'root';
-     mysql55.Password:= 'p3nd3kar';
-     mysql55.DatabaseName:= sett.Strings[1];
-     mysql55.Open;
+    mysql55.Password:= pass;
+    mysql55.DatabaseName:= db;
+    mysql55.Port:=port;
+
+    retry := 0;
+
+    while tryagain=True do begin
+
+     try
+       mysql55.Connected:=True;
+       if mysql55.Connected=True then tryagain:=False;
+     except
+       Memo1.Lines.Add('retrying to connect...');
+       Sleep(1000);
+     end;
+     retry := retry + 1;
+     if retry=3 then begin
+        ShowMessage('time out');
+        Exit;
+     end;
+
+  end;
 
   finally
     sett.Free;
@@ -83,19 +114,34 @@ begin
 end;
 
 procedure TForm1.FormActivate(Sender: TObject);
+var au : String;
 begin
-  sett := TStringList.Create;
-  try
-     sett.LoadFromFile('hostn.txt');
-     if sett.Strings[2]='1' then btStart.Click;
-     Application.ProcessMessages;
-  finally
-     sett.Free;
-  end;
-end;
+  //sett := TStringList.Create;
+  //try
+  //   sett.LoadFromFile('hostn.txt');
+  //   if sett.Strings[2]='1' then btStart.Click;
+  //   Application.ProcessMessages;
+  //finally
+  //   sett.Free;
+  //end;
 
-procedure TForm1.FormShow(Sender: TObject);
-begin
+   with TIniFile.Create('host.ini') do begin
+         host := ReadString('default','host','localhost');
+         db   := ReadString('default','db','emerald');
+         pass := DecryptString(ReadString('default','code',''));
+         port := ReadInteger('default','port',3306);
+         mode := ReadString('default','mode','SM');
+         au := ReadString('default','autostart','0');
+         channel_user:= ReadString('channel','cuser','');
+         channel_pass:= ReadString('channel','cpass','');
+         channel_hotelid := ReadString('channel','chotelid','');
+         Free;
+    end;
+
+   if mode='SM' then Form1.Caption:='SiteMinder Inventory'
+   else if mode='BL' then Form1.Caption:='BookAndLink Inventory';
+
+   if au='1' then btStart.Click;
 
 end;
 
@@ -195,10 +241,14 @@ begin
   newtxt := StringReplace(newtxt,'time-xxx',FormatDateXML(Now),[rfIgnoreCase,rfReplaceAll]);
   echostr := generateEcho('e');
   newtxt := StringReplace(newtxt,'echo-xxx',echostr,[rfIgnoreCase,rfReplaceAll]);
-  //Memo3.Lines.Add(echostr);
   newtxt := StringReplace(newtxt,'start-xxx',FormatDateTime('yyyy-mm-dd',fmdt),[rfIgnoreCase,rfReplaceAll]);
   newtxt := StringReplace(newtxt,'end-xxx',FormatDateTime('yyyy-mm-dd',todt),[rfIgnoreCase,rfReplaceAll]);
   newtxt := StringReplace(newtxt,'room-xxx',sRoomTyp,[rfIgnoreCase,rfReplaceAll]);
+  newtxt := StringReplace(newtxt,'user-xxx',channel_user,[rfIgnoreCase,rfReplaceAll]);
+  newtxt := StringReplace(newtxt,'pass-xxx',channel_pass,[rfIgnoreCase,rfReplaceAll]);
+  newtxt := StringReplace(newtxt,'hotelid-xxx',channel_hotelid,[rfIgnoreCase,rfReplaceAll]);
+
+
   if ckRateCode.Checked then begin
      newtxt := StringReplace(newtxt,'rate-xxx','RatePlanCode="'+sRoomTyp+'"',[rfIgnoreCase,rfReplaceAll]);
   end
@@ -223,6 +273,9 @@ begin
   end;
 
   newtxt := StringReplace(newtxt,'book-xxx',IntToStr(iRoomAv),[rfIgnoreCase,rfReplaceAll]);
+  g_tgl:=fmdt;
+  g_roomav:=iRoomAv;
+  g_roomtpcd:=sRoomTyp;
   Result := newtxt;
 
 
@@ -398,7 +451,13 @@ begin
 
 
 
-        cmdstr := 'insert into xmlchain (xmlstr,typ) values ('+QuotedStr(xmlstr)+',''A'')';
+        cmdstr := 'insert into xmlchain (xmlstr,typ,roomtpcd,roomav,roomdt) values ('+QuotedStr(xmlstr)+
+                  ','+QuotedStr('A')+
+                  ','+QuotedStr(g_roomtpcd)+
+                  ','+IntToStr(g_roomav)+
+                  ','+QuotedStr(FormatDateTime('yyyy-mm-dd',g_tgl))+
+                  ')';
+
         mysql55.ExecuteDirect(cmdstr);
         SQLTransaction1.CommitRetaining;
 
@@ -497,7 +556,7 @@ begin
   try
     http.Request.ContentType := 'text/xml';
     http.Request.AcceptCharSet := 'utf-8';
-    http.ReadTimeout := 10000;
+    http.ReadTimeout := 5000;
 
     try
        if act=staah_update then
@@ -520,6 +579,20 @@ begin
 
 end;
 
+function TForm1.DecryptString(aString:string):string;
+var Key:string;
+    DecrytpStream:TBlowFishDeCryptStream;
+    StringStream:TStringStream;
+    DecryptedString:string;
+begin
+  Key := KUNCI;
+  StringStream := TStringStream.Create(DecodeStringBase64(aString));
+  DecrytpStream := TBlowFishDeCryptStream.Create(Key,StringStream);
+  DecryptedString := DecrytpStream.ReadAnsiString;
+  DecrytpStream.Free;
+  StringStream.Free;
+  Result := DecryptedString;
+end;
 
 end.
 
