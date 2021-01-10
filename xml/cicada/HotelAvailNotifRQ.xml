@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
   <SOAP-ENV:Header>
     <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" soapenv:mustUnderstand="1">
@@ -22,3 +23,29 @@
 </OTA_HotelAvailNotifRQ>
   </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>
+=======
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP-ENV:Header>
+    <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" soapenv:mustUnderstand="1">
+      <wsse:UsernameToken>
+        <wsse:Username>cicada</wsse:Username>
+        <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">ehs26184</wsse:Password>
+      </wsse:UsernameToken>
+    </wsse:Security>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+  <OTA_HotelAvailNotifRQ xmlns="http://www.opentravel.org/OTA/2003/05" Version="1.0" TimeStamp="time-xxx" EchoToken="echo-xxx">
+  <POS>
+    <Source>
+      <RequestorID Type="22" ID="EMERALD"/>
+    </Source>
+  </POS>
+  <AvailStatusMessages HotelCode="EHS26184">
+    <AvailStatusMessage BookingLimit="book-xxx">
+      <StatusApplicationControl Start="start-xxx" End="end-xxx" InvTypeCode="room-xxx" />
+    </AvailStatusMessage>
+  </AvailStatusMessages>
+</OTA_HotelAvailNotifRQ>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+>>>>>>> f10422416d3e1d889c98ea9eb07260cf0f1f170d

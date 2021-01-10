@@ -18,7 +18,11 @@
     </i18n>
     <VersionInfo>
       <UseVersionInfo Value="True"/>
+<<<<<<< HEAD
       <MinorVersionNr Value="4"/>
+=======
+      <MinorVersionNr Value="2"/>
+>>>>>>> f10422416d3e1d889c98ea9eb07260cf0f1f170d
       <StringTable Comments="sslvSSLv23 (menghadapi TLS 1.2)" ProductVersion=""/>
     </VersionInfo>
     <BuildModes Count="1">
@@ -64,7 +68,11 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
+<<<<<<< HEAD
       <OtherUnitFiles Value="../../lazcomps/indy-10.2.0.3/lazarus;C:/master/lazcomps/indy-10.2.0.3/lazarus/"/>
+=======
+      <OtherUnitFiles Value="../../lazcomps/indy-10.2.0.3/lazarus"/>
+>>>>>>> f10422416d3e1d889c98ea9eb07260cf0f1f170d
       <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>

@@ -54,9 +54,12 @@ type
     g_tgl : TDate;
     g_roomtpcd : String;
     g_roomav : Integer;
+<<<<<<< HEAD
     host,db,pass,mode : String;
     channel_user,channel_pass,channel_hotelid: String;
     port: Integer;
+=======
+>>>>>>> f10422416d3e1d889c98ea9eb07260cf0f1f170d
   end;
 
 var
@@ -77,15 +80,24 @@ begin
 
   sett := TStringList.Create;
   try
+<<<<<<< HEAD
     //sett.LoadFromFile('hostn.txt');
 
+=======
+    sett.LoadFromFile('hostn.txt');
+>>>>>>> f10422416d3e1d889c98ea9eb07260cf0f1f170d
     tryagain := True;
 
     mysql55.HostName:= host;
     mysql55.UserName:= 'root';
+<<<<<<< HEAD
     mysql55.Password:= pass;
     mysql55.DatabaseName:= db;
     mysql55.Port:=port;
+=======
+    mysql55.Password:= 'p3nd3kar';
+    mysql55.DatabaseName:= sett.Strings[1];
+>>>>>>> f10422416d3e1d889c98ea9eb07260cf0f1f170d
 
     retry := 0;
 
@@ -138,6 +150,7 @@ begin
          Free;
     end;
 
+<<<<<<< HEAD
    if mode='SM' then Form1.Caption:='SiteMinder Inventory'
    else if mode='BL' then Form1.Caption:='BookAndLink Inventory';
 
@@ -145,6 +158,8 @@ begin
 
 end;
 
+=======
+>>>>>>> f10422416d3e1d889c98ea9eb07260cf0f1f170d
 procedure TForm1.btStartClick(Sender: TObject);
 var orifromdt : TDate;
     cmdstr: String;
